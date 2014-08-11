@@ -27,3 +27,9 @@ augroup END
 
 nmap ,, :w \| !gcc % && ./a.out
 nmap ,m :w \| !gcc % && ./a.out<cr>
+nmap !! :!
+nmap <Tab> :bn<cr>
+nmap <S-Tab> :bp<cr>
+
+"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nmap ,c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
