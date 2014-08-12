@@ -17,6 +17,8 @@ nmap <silent> <C-F8> :WMToggle<cr>
 set wildmenu
 set wildmode=longest:full,full
 
+set tags=./tags,tags;
+
 augroup vimrcEx
   " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
