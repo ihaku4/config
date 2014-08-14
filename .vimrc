@@ -3,7 +3,8 @@ set nu
 set ai
 "set smartindent
 
-set tabstop=2
+"keep default tabstop=8
+"set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
@@ -27,14 +28,15 @@ augroup vimrcEx
     \ endif
 augroup END
 
-nmap ,, :w \| !gcc % && ./a.out
+"nmap ,, :w \| !gcc % && ./a.out
 "nmap ,m :w \| :vsplit \| .!gcc % && ./a.out<cr>
 "nmap ,m :w\|!gcc %<CR>\|:split console\|:r !echo -e "\n-------------------------" && ./a.out<cr>
 "nmap ,m :w\|!gcc %<CR>\|:split console\|.!./a.out<cr>
 
 "end every cmd with <CR>, or you'll have to type enter by hand.
 "and then : is required after every |
-nmap ,m :w\|!gcc %<CR>\|:split console<cr>\|:%!./a.out<cr>
+nmap ,m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
+nmap ,, :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out
 nmap qf :close!<cr>
 
 nmap !! :!
@@ -45,5 +47,9 @@ nmap <C-k> <C-W>k
 nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+nnoremap ,sh :sh<CR>
+
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nmap ,c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
