@@ -49,6 +49,7 @@ nmap <C-l> <C-W>l
 
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 nnoremap ,sh :sh<CR>
+nmap ,b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
 
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nmap ,c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
