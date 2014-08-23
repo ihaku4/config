@@ -35,8 +35,8 @@ augroup END
 
 "end every cmd with <CR>, or you'll have to type enter by hand.
 "and then : is required after every |
-nmap ,m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
-nmap ,, :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out
+nmap \m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
+nmap \, :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out
 nmap qf :close!<cr>
 
 nmap !! :!
@@ -47,10 +47,10 @@ nmap <C-k> <C-W>k
 nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
-nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
-nnoremap ,sh :sh<CR>
-nmap ,b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
+nnoremap \cd :cd %:p:h<CR>:pwd<CR>
+nnoremap \sh :sh<CR>
+nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
 
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-nmap ,c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
