@@ -37,7 +37,7 @@ augroup END
 "and then : is required after every |
 nmap \m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
 nmap \, :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out
-nmap qf :close!<cr>
+nmap \q :close!<cr>
 
 nmap !! :!
 nmap <Tab> :bn<cr>
