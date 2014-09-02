@@ -1,0 +1,8 @@
+[user]
+	name = Durrrr
+	email = ihaku4@gmail.com
+[alias]
+	lg = log --graph --oneline --all --color
+        df = diff --color --summary
+        st = status
+        co = checkout
