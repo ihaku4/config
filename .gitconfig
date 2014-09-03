@@ -6,3 +6,4 @@
         df = diff --color --summary
         st = status
         co = checkout
+        ci = commit
