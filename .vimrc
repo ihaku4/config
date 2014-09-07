@@ -37,10 +37,13 @@ augroup END
 "and then : is required after every |
 nmap \m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
 nmap \, :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out
+nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
+nmap \p :w \| :!gcc % && ./a.out<cr>
+
 nmap \q :close!<cr>
 
 nmap !! :!
-nmap <Tab> :bn<cr>
+nmap <C-Tab> :bn<cr>
 nmap <S-Tab> :bp<cr>
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
@@ -49,8 +52,10 @@ nmap <C-l> <C-W>l
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :sh<CR>
-nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
 
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+vmap \( c(<C-R>")<Esc>
+vmap \" c"<C-R>""<Esc>
+vmap \' c'<C-R>"'<Esc>
