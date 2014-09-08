@@ -28,11 +28,6 @@ augroup vimrcEx
     \ endif
 augroup END
 
-"nmap ,, :w \| !gcc % && ./a.out
-"nmap ,m :w \| :vsplit \| .!gcc % && ./a.out<cr>
-"nmap ,m :w\|!gcc %<CR>\|:split console\|:r !echo -e "\n-------------------------" && ./a.out<cr>
-"nmap ,m :w\|!gcc %<CR>\|:split console\|.!./a.out<cr>
-
 "end every cmd with <CR>, or you'll have to type enter by hand.
 "and then : is required after every |
 nmap \m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
@@ -59,3 +54,4 @@ nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 vmap \( c(<C-R>")<Esc>
 vmap \" c"<C-R>""<Esc>
 vmap \' c'<C-R>"'<Esc>
+nmap gr gT
