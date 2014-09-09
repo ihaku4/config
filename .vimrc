@@ -56,12 +56,12 @@ nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " auto save & restore session
 fu! SaveSess()
-  execute 'mksession! ' . getcwd() . '/.session.vim'
+  execute 'mksession! ' . $HOME . '/.session.vim'
 endfunction
 
 fu! RestoreSess()
-if filereadable(getcwd() . '/.session.vim')
-  execute 'so ' . getcwd() . '/.session.vim'
+if filereadable($HOME . '/.session.vim')
+  execute 'so ' . $HOME . '/.session.vim'
   if bufexists(1)
     for l in range(1, bufnr('$'))
       if bufwinnr(l) == -1
