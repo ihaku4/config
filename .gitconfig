@@ -7,3 +7,5 @@
         st = status
         co = checkout
         ci = commit
+[credential]
+	helper = cache --timeout=3600
