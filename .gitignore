@@ -1,4 +1,5 @@
 *
+!tool/
 !.vimrc
 !.gitconfig
 !.gitignore
