@@ -48,8 +48,11 @@ nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
-nnoremap \sh :sh<CR>
+nnoremap \sh :cd %:p:h<CR>:sh<CR>
 nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
+nmap \d :cd %:p:h<CR>:w\|:!gcc % -g&&gdb ./a.out<cr>
+nmap \p :cd %:p:h<CR>:w\|:!gcc %&&./a.out<cr>
+nmap \\p :cd %:p:h<CR>:w\|:!gcc %&&./a.out 
 
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -74,4 +77,5 @@ syntax on
 endfunction
 
 autocmd VimLeave * call SaveSess()
-autocmd VimEnter * call RestoreSess()
+" this makes a mess when open multiple vi
+"autocmd VimEnter * call RestoreSess()
