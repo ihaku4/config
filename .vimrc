@@ -32,8 +32,6 @@ augroup END
 "and then : is required after every |
 nmap \m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
 nmap \, :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out
-nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
-nmap \p :w \| :!gcc % && ./a.out<cr>
 
 nmap \q :close!<cr>
 
@@ -46,12 +44,48 @@ nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
-nnoremap \sh :sh<CR>
+nnoremap \sh :cd %:p:h<CR>:sh<CR>
+nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
+nmap \d :cd %:p:h<CR>:w\|:!gcc % -g&&gdb -tui ./a.out<cr>
+nmap \p :cd %:p:h<CR>:w\|:!gcc %&&./a.out<cr>
+nmap \\p :cd %:p:h<CR>:w\|:!gcc %&&./a.out 
 
-"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-vmap \( c(<C-R>")<Esc>
-vmap \" c"<C-R>""<Esc>
-vmap \' c'<C-R>"'<Esc>
 nmap gr gT
+
+" auto save & restore session
+fu! SaveSess()
+  execute 'mksession! ' . $HOME . '/.session.vim'
+endfunction
+
+fu! RestoreSess()
+if filereadable($HOME . '/.session.vim')
+  execute 'so ' . $HOME . '/.session.vim'
+  if bufexists(1)
+    for l in range(1, bufnr('$'))
+      if bufwinnr(l) == -1
+        exec 'sbuffer ' . l
+      endif
+    endfor
+  endif
+endif
+syntax on
+endfunction
+
+autocmd VimLeave * call SaveSess()
+" this makes a mess when open multiple vi
+"autocmd VimEnter * call RestoreSess()
+
+function! s:get_visual_selection()
+  " Why is this not a built-in Vim script function?!
+  let [lnum1, col1] = getpos("'<")[1:2]
+  let [lnum2, col2] = getpos("'>")[1:2]
+  let lines = getline(lnum1, lnum2)
+  let lines[-1] = lines[-1][: col2 - (&selection == 'inclusive' ? 1 : 2)]
+  let lines[0] = lines[0][col1 - 1:]
+  return join(lines, "\n")
+endfunction
+
+"vmap \g :%!git show  
+nmap \g :tabe<cr>:%!git show 
