@@ -45,7 +45,7 @@ nmap <C-l> <C-W>l
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
 nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
-nmap \d :cd %:p:h<CR>:w\|:!gcc % -g&&gdb ./a.out<cr>
+nmap \d :cd %:p:h<CR>:w\|:!gcc % -g&&gdb -tui ./a.out<cr>
 nmap \p :cd %:p:h<CR>:w\|:!gcc %&&./a.out<cr>
 nmap \\p :cd %:p:h<CR>:w\|:!gcc %&&./a.out 
 
