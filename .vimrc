@@ -28,11 +28,6 @@ augroup vimrcEx
     \ endif
 augroup END
 
-"nmap ,, :w \| !gcc % && ./a.out
-"nmap ,m :w \| :vsplit \| .!gcc % && ./a.out<cr>
-"nmap ,m :w\|!gcc %<CR>\|:split console\|:r !echo -e "\n-------------------------" && ./a.out<cr>
-"nmap ,m :w\|!gcc %<CR>\|:split console\|.!./a.out<cr>
-
 "end every cmd with <CR>, or you'll have to type enter by hand.
 "and then : is required after every |
 nmap \m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
@@ -54,7 +49,6 @@ nmap \d :cd %:p:h<CR>:w\|:!gcc % -g&&gdb ./a.out<cr>
 nmap \p :cd %:p:h<CR>:w\|:!gcc %&&./a.out<cr>
 nmap \\p :cd %:p:h<CR>:w\|:!gcc %&&./a.out 
 
-"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " auto save & restore session
