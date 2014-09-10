@@ -4,7 +4,7 @@
 [alias]
 	lg = log --graph --oneline --all --color
         df = diff --color --summary
-        st = status
+        st = status --short
         co = checkout
         ci = commit
 [credential]
