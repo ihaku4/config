@@ -46,7 +46,6 @@ imap <c-e> <esc>A
 imap <c-a> <esc>I
 nmap <c-\><c-t> :tabe<cr>
 nmap <c-\><c-\><c-t> :tabe 
-imap <c-,> <Left>
 imap <c-j> <Left>
 imap <c-k> <Right>
 
