@@ -44,6 +44,8 @@ nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 imap <c-e> <esc>A
 imap <c-a> <esc>I
+nmap <c-\><c-t> :tabe<cr>
+nmap <c-\><c-\><c-t> :tabe 
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
