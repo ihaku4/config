@@ -3,8 +3,8 @@
 	email = ihaku4@gmail.com
 [alias]
 	lg = log --graph --oneline --all --color
-        df = diff --color --summary
-        st = status --short
+        df = diff --color
+        st = status
         co = checkout
         ci = commit
 [credential]
