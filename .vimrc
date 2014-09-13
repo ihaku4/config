@@ -48,6 +48,13 @@ nmap <c-\><c-t> :tabe<cr>
 nmap <c-\><c-\><c-t> :tabe 
 imap <c-j> <Left>
 imap <c-k> <Right>
+nmap / /\v\c
+vmap / /\v\c
+cnoremap %s/ %smagic/
+cnoremap \>s/ \>smagic/
+"the two maps blow cause : be slow
+"nnoremap :g/ :g/\v
+"nnoremap :g// :g//
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
