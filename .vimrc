@@ -55,6 +55,7 @@ cnoremap \>s/ \>smagic/
 "the two maps blow cause : be slow
 "nnoremap :g/ :g/\v
 "nnoremap :g// :g//
+nmap * *N
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
