@@ -58,6 +58,7 @@ cnoremap \>s/ \>smagic/
 nmap * *N
 nmap \/ :vimgrep /\v\c/gj ./**/*<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 nmap \w :cw<cr>
+nmap \\\ :tabe ~/.vimrc<cr>
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
