@@ -56,6 +56,8 @@ cnoremap \>s/ \>smagic/
 "nnoremap :g/ :g/\v
 "nnoremap :g// :g//
 nmap * *N
+nmap \/ :vimgrep /\v\c/gj ./**/*<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+nmap \w :cw<cr>
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
