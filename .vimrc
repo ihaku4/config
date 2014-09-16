@@ -42,12 +42,13 @@ nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
-imap <c-e> <esc>A
-imap <c-a> <esc>I
 nmap <c-\><c-t> :tabe<cr>
 nmap <c-\><c-\><c-t> :tabe 
-imap <c-j> <Left>
-imap <c-k> <Right>
+"use <c-o> instead of these imap
+"imap <c-e> <esc>A
+"imap <c-a> <esc>I
+"imap <c-j> <Left>
+"imap <c-k> <Right>
 nmap / /\v\c
 vmap / /\v\c
 cnoremap %s/ %smagic/
@@ -57,8 +58,11 @@ cnoremap \>s/ \>smagic/
 "nnoremap :g// :g//
 nmap * *N
 nmap \/ :vimgrep /\v\c/gj ./**/*<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+"count search pattern
+nmap \\/ :%s//\0/g<cr>
 nmap \w :cw<cr>
 nmap \\\ :tabe ~/.vimrc<cr>
+nnoremap <esc> :noh<return><esc>
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
