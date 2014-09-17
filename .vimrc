@@ -70,6 +70,12 @@ nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
 nmap \d :cd %:p:h<CR>:w\|:!gcc % -g&&gdb -tui ./a.out<cr>
 nmap \p :cd %:p:h<CR>:w\|:!gcc %&&./a.out<cr>
 nmap \\p :cd %:p:h<CR>:w\|:!gcc %&&./a.out 
+"objdump
+nmap \\od :cd %:p:h<CR>:w\|:!gcc % -g && objdump -dS a.out
+"readelf -a
+nmap \\re :cd %:p:h<CR>:w\|:!gcc % -g && readelf -a a.out
+"hexdump -C
+nmap \\hd :cd %:p:h<CR>:w\|:!gcc % -g && hexdump -C a.out
 
 nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
