@@ -62,7 +62,8 @@ nmap \/ :vimgrep /\v\c/gj ./**/*<Left><Left><Left><Left><Left><Left><Left><Left>
 nmap \\/ :%s//\0/g<cr>
 nmap \w :cw<cr>
 nmap \\\ :tabe ~/.vimrc<cr>
-nnoremap <esc> :noh<return><esc>
+" this mapping make vi behave awkward when starting
+"nnoremap <esc> :noh<return><esc>
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>

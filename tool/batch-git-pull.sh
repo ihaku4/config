@@ -7,7 +7,9 @@ function update_git_repo() {
     return 1
   fi
 
-  if git pull origin master
+  # Solving the 'Your branch is ahead of 'origin/master' by x commits' issue after pulling using git.
+  #if git pull origin master
+  if git fetch && git merge origin/master
   then 
     echo "[SUCCESS] git update $GIT_UPDATE_DIR success."
   else
