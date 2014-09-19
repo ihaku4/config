@@ -29,4 +29,4 @@ batch_update_git \
   "$HOME" \
   "$HOME"/c-learning \
 
-echo '--- update finshed ---'
+echo '--- update finished ---'
