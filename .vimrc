@@ -12,6 +12,8 @@ set expandtab
 set hlsearch
 set incsearch
 
+set showcmd
+
 let g:AutoOpenWinManager = 1
 nmap <silent> <C-F8> :WMToggle<cr>
 
