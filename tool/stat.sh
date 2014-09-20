@@ -1,5 +1,7 @@
 set -e
 
+cd `pwd`
+
 file_pattern=$1
 
 function main {
