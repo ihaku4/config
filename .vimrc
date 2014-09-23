@@ -57,7 +57,8 @@ vmap / /\v\c
 cnoremap %s/ %smagic/
 cnoremap \>s/ \>smagic/
 "audo fill pwd
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
+"cnoremap %% <C-R>=expand('%:h').'/'<cr>
+cnoremap %% <C-R>=expand('%:p:h').'/'<cr>
 cnoremap \|\| <space>\| view -
 
 "the two maps blow cause : be slow
@@ -86,7 +87,7 @@ nmap \\re :cd %:p:h<CR>:w\|:!gcc % -g && readelf -a a.out
 "hexdump -C
 nmap \\hd :cd %:p:h<CR>:w\|:!gcc % -g && hexdump -C a.out
 
-nmap \c :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nmap \ct :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 nmap gr gT
 
