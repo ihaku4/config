@@ -1,4 +1,5 @@
 set nu
+set showtabline=2
 
 set ai
 "set smartindent
@@ -55,6 +56,10 @@ nmap / /\v\c
 vmap / /\v\c
 cnoremap %s/ %smagic/
 cnoremap \>s/ \>smagic/
+"audo fill pwd
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+cnoremap \|\| <space>\| view -
+
 "the two maps blow cause : be slow
 "nnoremap :g/ :g/\v
 "nnoremap :g// :g//
@@ -66,6 +71,7 @@ nmap \w :cw<cr>
 nmap \\\ :tabe ~/.vimrc<cr>
 " this mapping make vi behave awkward when starting
 "nnoremap <esc> :noh<return><esc>
+nnoremap \<esc> :noh<cr>
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
