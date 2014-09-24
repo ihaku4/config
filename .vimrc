@@ -76,6 +76,8 @@ nnoremap \<esc> :noh<cr>
 
 nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
+nnoremap \tm :cd %:p:h<CR>:!tmux attach \|\| tmux<CR>
+nnoremap \\tm :cd %:p:h<CR>:!tmux<CR>
 nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
 nmap \d :cd %:p:h<CR>:w\|:!gcc % -g&&gdb -tui ./a.out<cr>
 nmap \p :cd %:p:h<CR>:w\|:!gcc %&&./a.out<cr>
