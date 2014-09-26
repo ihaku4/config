@@ -1,3 +1,5 @@
+#! /bin/bash
+
 function update_git_repo() {
   GIT_UPDATE_DIR=$1
   if [ -d "$GIT_UPDATE_DIR" ]; then
