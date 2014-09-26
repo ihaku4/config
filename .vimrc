@@ -1,10 +1,9 @@
 set nu
 set showtabline=2
-set winheight=30
+set winheight=20
 set winminheight=5
 "set winwidth=80
 set winminwidth=20
-set
 
 set ai
 "set smartindent
