@@ -92,6 +92,8 @@ nmap \\od :cd %:p:h<CR>:w\|:!gcc % -g && objdump -dS a.out
 nmap \\re :cd %:p:h<CR>:w\|:!gcc % -g && readelf -a a.out
 "hexdump -C
 nmap \\hd :cd %:p:h<CR>:w\|:!gcc % -g && hexdump -C a.out
+"gcc -E % | grep typename
+"nmap 
 
 nmap \ct :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
