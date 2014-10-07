@@ -30,5 +30,6 @@ function batch_update_git() {
 batch_update_git \
   "$HOME" \
   "$HOME"/c-learning \
+  "$HOME"/CSAPP \
 
 echo '--- update finished ---'
