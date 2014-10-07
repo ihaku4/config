@@ -1,13 +1,13 @@
 set nu
 set showtabline=2
-set winheight=20
-set winminheight=5
+"set winheight=20
+"set winminheight=5
 "set winwidth=80
-set winminwidth=20
+"set winminwidth=20
 
 set foldmethod=syntax
-nmap zr zR
-nmap zm zM
+"nmap zr zR
+"nmap zm zM
 "set foldtext=MyFoldText()
 "function MyFoldText()
 "  let line = getline(v:foldstart)
@@ -80,8 +80,8 @@ nmap <c-\><c-\><c-t> :tabe
 "imap <c-k> <Right>
 nmap / /\v\c
 vmap / /\v\c
-cnoremap %s/ %smagic/
-cnoremap \>s/ \>smagic/
+"cnoremap %s/ %smagic/
+"cnoremap \>s/ \>smagic/
 "audo fill pwd
 "cnoremap %% <C-R>=expand('%:h').'/'<cr>
 cnoremap %% <C-R>=expand('%:p:h').'/'<cr>
