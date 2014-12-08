@@ -156,3 +156,4 @@ endfunction
 
 "vmap \g :%!git show  
 nmap \g :tabe<cr>:%!git show 
+cmap w!! w !sudo tee >/dev/null %
