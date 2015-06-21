@@ -1,3 +1,72 @@
+" ------Vundle Stuff Below
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+"" The following are examples of different formats supported.
+"" Keep Plugin commands between vundle#begin/end.
+"" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+"" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+"" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+"" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+"" The sparkup vim script is in a subdirectory of this repo called vim.
+"" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets="<c-l>" 
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+" ------Vundle Stuff End
+
+execute pathogen#infect()
+syntax on
+"filetype plugin indent on
+" filetype plugin on
+" [PLUGIN] pydiction config. necessary.
+" let g:pydiction_location = '/home/user/.vim/bundle/pydiction/complete-dict'
+
 set nu
 set showtabline=2
 "set winheight=20
@@ -57,20 +126,15 @@ augroup vimrcEx
     \ endif
 augroup END
 
-"end every cmd with <CR>, or you'll have to type enter by hand.
-"and then : is required after every |
-nmap \m :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out<cr>\|:w<cr>
-nmap \, :w\|!gcc %:p<CR>\|:split %:p.log<cr>\|:%!%:p:h/a.out
-
 nmap \q :close!<cr>
 
 nmap !! :!
 nmap <C-Tab> :bn<cr>
 nmap <S-Tab> :bp<cr>
-nmap <C-j> <C-W>j
-nmap <C-k> <C-W>k
-nmap <C-h> <C-W>h
-nmap <C-l> <C-W>l
+"nmap <C-j> <C-W>j
+"nmap <C-k> <C-W>k
+"nmap <C-h> <C-W>h
+"nmap <C-l> <C-W>l
 nmap <c-\><c-t> :tabe<cr>
 nmap <c-\><c-\><c-t> :tabe 
 "use <c-o> instead of these imap
@@ -104,18 +168,6 @@ nnoremap \cd :cd %:p:h<CR>:pwd<CR>
 nnoremap \sh :cd %:p:h<CR>:sh<CR>
 nnoremap \tm :cd %:p:h<CR>:!tmux attach \|\| tmux<CR>
 nnoremap \\tm :cd %:p:h<CR>:!tmux<CR>
-nmap \b :w\|:split %:p.log<CR>\|:%!python %:r<CR>
-nmap \d :cd %:p:h<CR>:w\|:!gcc % -g&&gdb -tui ./a.out<cr>
-nmap \p :cd %:p:h<CR>:w\|:!gcc %&&./a.out<cr>
-nmap \\p :cd %:p:h<CR>:w\|:!gcc %&&./a.out 
-"objdump
-nmap \\od :cd %:p:h<CR>:w\|:!gcc % -g && objdump -dS a.out
-"readelf -a
-nmap \\re :cd %:p:h<CR>:w\|:!gcc % -g && readelf -a a.out
-"hexdump -C
-nmap \\hd :cd %:p:h<CR>:w\|:!gcc % -g && hexdump -C a.out
-"gcc -E % | grep typename
-"nmap 
 
 nmap \ct :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
@@ -157,3 +209,22 @@ endfunction
 "vmap \g :%!git show  
 nmap \g :tabe<cr>:%!git show 
 cmap w!! w !sudo tee >/dev/null %
+
+nmap <F8> :NERDTreeToggle<CR>
+
+"" settings for Syntastic (python syntax checker)
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"" let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_java_checkers = []
+let g:syntastic_python_checkers = []
+
+set pastetoggle=<F7>
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
