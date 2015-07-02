@@ -1,5 +1,5 @@
 [user]
-	name = Durrrr
+	name = ihaku4
 	email = ihaku4@gmail.com
 [alias]
 	lg = log --graph --oneline --all --color
@@ -10,3 +10,11 @@
         aa = add -A
 [credential]
 	helper = cache --timeout=36000
+[core]
+	excludesfile = /Users/durrrr/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

@@ -228,3 +228,5 @@ let g:syntastic_python_checkers = []
 set pastetoggle=<F7>
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+set history=1000
+nmap \<space> ggVG"+y
